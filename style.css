@@ -109,11 +109,6 @@ footer {
   transform: rotate(360deg);
 }
 
-.book h4 {
-  /* font-size: 100%; */
-  /* width: 100%; */
-}
-
 .review,
 .quote {
   background-color: #f2ce72;
