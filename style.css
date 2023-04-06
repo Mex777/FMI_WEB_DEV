@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&family=Satisfy&display=swap");
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.title {
+  color: white;
+  -webkit-text-stroke: 1px black;
+  font-weight: 1000;
+  font-size: 2rem;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+header h3 {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+header nav {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.5rem;
+}
+
+footer {
+  background-color: black;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 0.5rem;
+  font-weight: 800;
+}
+
+.banner {
+  width: 100vw;
+  height: 300px;
+  background-color: rgb(212, 211, 211);
+  text-align: center;
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.banner h1 {
+  position: absolute;
+  color: white;
+  -webkit-text-stroke: 1px black;
+  font-size: 2.5vw;
+  font-weight: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.book-list {
+  text-align: center;
+  width: 100%;
+}
+
+.books {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  width: 100%;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.book {
+  width: 17%;
+  text-align: center;
+}
+
+.book img {
+  width: 100%;
+  min-width: 100px;
+  max-height: 350px;
+  display: block;
+  transition: transform 1s;
+}
+
+.book img:hover {
+  transform: rotate(360deg);
+}
+
+.book h4 {
+  /* font-size: 100%; */
+  /* width: 100%; */
+}
+
+.review,
+.quote {
+  background-color: #f2ce72;
+  padding: 1.8rem;
+  font-family: "Satisfy", cursive;
+  text-align: center;
+}
+
+.review p,
+.quote p {
+  font-size: 1.8rem;
+}
+
+.author {
+  text-align: end;
+}
+
+.book-svg {
+  height: 50px;
+  margin-bottom: 1rem;
+  animation-name: change-color;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes change-color {
+  0% {
+    color: rgb(68, 111, 85);
+  }
+  25% {
+    color: rgb(246, 246, 192);
+  }
+  50% {
+    color: rgb(255, 106, 0);
+  }
+  75% {
+    color: rgb(184, 184, 17);
+  }
+
+  100% {
+    color: red;
+  }
+}
+
+.typed {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing;
+  animation-duration: 10s;
+  animation-timing-function: steps(107, end);
+  animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.information {
+  display: grid;
+  grid-template-areas:
+    "info1 pic1"
+    "pic2 info2"
+    "info3 pic3";
+  row-gap: 1rem;
+  column-gap: 5rem;
+  padding: 3rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.information img {
+  min-width: 300px;
+  object-fit: cover;
+  width: 100%;
+  max-height: 80%;
+}
+
+.information p {
+  font-size: 1.5rem;
+}
+
+.info1 {
+  grid-area: info1;
+}
+
+.info2 {
+  grid-area: info2;
+}
+
+.info3 {
+  grid-area: info3;
+}
+
+.pic1 {
+  grid-area: pic1;
+}
+
+.pic2 {
+  grid-area: pic2;
+}
+
+.pic3 {
+  grid-area: pic3;
+}
+
+.quote > .author p,
+.quote > .comm p {
+  margin: 0;
+}
+
+.comm::after {
+  content: "";
+  border-top: 1px solid black;
+  width: 100%;
+  display: block;
+}
+
+@media only screen and (max-width: 800px) {
+  .books {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .book-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .book {
+    width: 50%;
+    height: auto;
+  }
+
+  .book img {
+    min-width: 200px;
+    max-height: 500px;
+  }
+
+  .banner {
+    /* display: none; */
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    font-size: 30px;
+  }
+
+  .banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .banner h1 {
+    font-size: 20px;
+  }
+
+  .information {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .information > p {
+    font-size: 1rem;
+  }
+
+  .comm p {
+    font-size: 1rem;
+  }
+
+  .author p {
+    font-size: 1rem;
+  }
+
+  .typed {
+    white-space: normal;
+    animation: none;
+    width: 100%;
+  }
+}
