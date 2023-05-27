@@ -42,7 +42,11 @@ const createBook = (obj, id) => {
   title.innerText = obj.title;
 
   const author = document.createElement("h4");
-  author.innerText = obj.authors[0];
+  if (author.innerText) {
+    author.innerText = obj.authors[0];
+  } else {
+    author.innerText = "Unknown";
+  }
 
   const description = document.createElement("p");
   if (obj.description) description.innerText = obj.description;
@@ -57,6 +61,7 @@ const createBook = (obj, id) => {
 };
 
 const fetchBooks = async (args) => {
+  args = args.replace(/\s+/g, "+");
   try {
     const response = await fetch(APILINK + `&q=${args}`);
     const data = await response.json();
@@ -76,8 +81,6 @@ const fetchBooks = async (args) => {
     console.log("ERROR fetching data", error);
   }
 };
-
-// apiRequest("ai");
 
 const card = document.createElement("form");
 card.className = "card";

@@ -28,15 +28,15 @@ const drop = document.createElement("div");
 drop.className = "dropdown-content";
 
 const option1 = document.createElement("a");
-option1.href = "../index.html";
+option1.href = "./index.html";
 option1.textContent = "Home";
 
 const option2 = document.createElement("a");
-option2.href = "../login.html";
+option2.href = "./login.html";
 option2.textContent = "Login";
 
 const option3 = document.createElement("a");
-option3.href = "../sign-up.html";
+option3.href = "./sign-up.html";
 option3.textContent = "Sign up";
 
 drop.append(option1, option2, option3);
