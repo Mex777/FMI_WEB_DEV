@@ -47,6 +47,27 @@ inputRepeatPassword.required = true;
 repeatPassword.append(labelRepeatPassword, inputRepeatPassword);
 repeatPassword.classList.add("input");
 
+const radio = document.createElement("div");
+radio.classList.add("radio");
+
+const r1 = document.createElement("div");
+const r1Input = document.createElement("input");
+const r1Label = document.createElement("label");
+r1Label.innerText = "Male";
+r1Input.type = "radio";
+r1Input.name = "gender";
+r1.append(r1Input, r1Label);
+
+const r2 = document.createElement("div");
+const r2Input = document.createElement("input");
+const r2Label = document.createElement("label");
+r2Label.innerText = "Female";
+r2Input.type = "radio";
+r2Input.name = "gender";
+r2.append(r2Input, r2Label);
+
+radio.append(r1, r2);
+
 const submitButton = document.createElement("button");
 submitButton.innerText = "Create new account";
 submitButton.style.color = "black";
@@ -78,7 +99,10 @@ form.onsubmit = (e) => {
       }
     }
 
-    alert("Signup worked");
+    setTimeout(() => {
+      alert("Account created");
+    }, 1000);
+
     const user = {
       user: inputEmail.value,
       name: inputName.value,
@@ -90,6 +114,6 @@ form.onsubmit = (e) => {
   }
 };
 
-form.append(name, email, password, repeatPassword, submitButton);
+form.append(name, email, password, repeatPassword, radio, submitButton);
 card.appendChild(form);
 main.appendChild(card);
