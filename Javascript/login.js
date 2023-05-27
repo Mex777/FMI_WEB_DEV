@@ -27,7 +27,7 @@ document.getElementById("form").onsubmit = (e) => {
     if (loginOutcome) {
       localStorage.setItem("logged", true);
       localStorage.setItem("user_id", email);
-      window.location.replace("../mainPage.html");
+      window.location.replace("./mainPage.html");
     } else {
       alert("Gresit nume / parola");
     }
